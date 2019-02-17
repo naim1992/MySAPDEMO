@@ -1,0 +1,91 @@
+<core:View
+  controllerName="applications.Calendar"
+  xmlns:l="sap.ui.layout"
+  xmlns:u="sap.ui.unified"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.ui.layout.form"
+  xmlns="sap.m"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+ >
+
+  
+ 
+
+<core:Fragment fragmentName="applications.Header" type="XML" />
+
+  <Panel width="auto" class="sapUiLargeMargi">
+      <content>
+          <Text text="Welcome to the holiday form." class="sapMH4FontSize"/>
+      </content>
+  </Panel>
+
+
+
+  <l:HorizontalLayout>
+    <l:content>
+      <l:VerticalLayout class="hLayout">
+        <u:Calendar
+          id="calendar"
+          select="handleCalendarSelect"
+          intervalSelection="true" ></u:Calendar>
+      </l:VerticalLayout>
+      <l:VerticalLayout class="rightVLayout">
+        <l:HorizontalLayout>
+          <Label
+            text="Departure Date (dd-mm-yyyy) : "
+            class="labelMarginLeft" />
+          <Text
+            id="selectedDateFrom"
+            text="No Date Selected"
+            class="labelMarginLeft"/>
+        </l:HorizontalLayout>
+        <l:HorizontalLayout>
+          <Label
+            text="Arrival Date (dd-mm-yyyy) : "
+            class="labelMarginLeft" />
+          <Text
+            id="selectedDateTo"
+            text="No Date Selected"
+            class="labelMarginLeft"/>
+        </l:HorizontalLayout>
+        <l:HorizontalLayout>
+       	<Label text="Departure Time : " class="labelMarginLeft" />
+       	<RadioButtonGroup columns="3"  valueState="Error" class="radioButton" xmlns="sap.ui.commons"  select="" id="btnRadio">
+			<items class="item"> 
+				<Item xmlns="sap.ui.core" text="Morning" enabled="true"	textDirection="Inherit"	class="item" key="key1"/>
+				<Item xmlns="sap.ui.core" text="Afternoon" enabled="true" textDirection="Inherit" key="key2"/>
+			</items>
+		</RadioButtonGroup>	
+   
+      </l:HorizontalLayout>
+      <l:HorizontalLayout>
+       <Label text="Arrival Time : " class="labelMarginLeft" />
+        <RadioButtonGroup columns="3"  valueState="Error" class="radioButton" xmlns="sap.ui.commons"  select="" id="return">
+			<items class="item"> 
+				<Item xmlns="sap.ui.core" text="Morning" enabled="true"	textDirection="Inherit" key="key3"/>
+				<Item xmlns="sap.ui.core" text="Afternoon" enabled="true" textDirection="Inherit" key="key4"/>
+			</items>
+		</RadioButtonGroup>	
+      </l:HorizontalLayout>
+      <l:HorizontalLayout class="reason">
+      <Label text="Hollyday Type : " class="labelRadio"/>
+        <RadioButtonGroup columns="3" xmlns="sap.ui.commons" id="hollydayType" >
+			<items class="item"> 
+				<Item xmlns="sap.ui.core" text="Hollyday" enabled="true"	textDirection="Inherit" key="key5"/>
+				<Item xmlns="sap.ui.core" text="Work at Home" enabled="true" textDirection="Inherit" key="key6"/>
+			</items>
+		</RadioButtonGroup>	
+      </l:HorizontalLayout>
+      <l:HorizontalLayout class="reason">
+			<Label design="Bold" text="Reason : " textAlign="Begin" width="5em" id="reasonLabel"/>
+			<TextField xmlns="sap.ui.commons"  width="20em" maxLength="30" design="Standard" id="reason"/>
+	  </l:HorizontalLayout>
+      <l:HorizontalLayout>
+      	  <Button press="handleSelectWorkWeek" text="Select Next-Week" class="button"/> 
+	      <Button type="Accept" text="Valid Request" press="onPress" ariaLabelledBy="actionButtonLabel" class="buttonValid"/> 
+      </l:HorizontalLayout>
+
+      </l:VerticalLayout>
+    </l:content>
+  </l:HorizontalLayout>
+</core:View>

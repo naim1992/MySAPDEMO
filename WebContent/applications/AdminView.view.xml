@@ -1,0 +1,148 @@
+<mvc:View controllerName="applications.AdminView" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:c="sap.ui.commons" xmlns:core="sap.ui.core" xmlns="sap.m">
+
+  <ScrollContainer
+		    height="100%"
+		    width="100%"
+		    horizontal="true"
+		    vertical="true"
+		    focusable="true">
+
+	<core:Fragment fragmentName="applications.Header" type="XML" />
+
+
+
+	<l:HorizontalLayout class="adminPage">
+
+		<l:VerticalLayout class="vLayout">
+			<l:HorizontalLayout width="100%">
+				<Text id="titleTeam" text="Create Team : " class="horizontalLayout2" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Input placeholder="Id Team" width="300px" fieldWidth="60%"
+					class="SapUiSmallMarginBottom" id="idTeam2" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Input placeholder="Name Team" width="300px" fieldWidth="60%"
+					class="SapUiSmallMarginBottom" id="nameTeam2" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Button width="150px" type="Accept" press="addTeam" text="Add Team" />
+				<Button width="150px" type="Reject" text="Add Employee"
+					press="addEmployee" ariaLabelledBy="actionButtonLabel" />
+			</l:HorizontalLayout>
+
+
+		</l:VerticalLayout>
+
+		<l:VerticalLayout class="vLayout">
+
+			<l:HorizontalLayout width="100%">
+				<Text id="titleEmployee" text="Create Employee : " class="horizontalLayout2" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Input placeholder="Employee Bname" width="300px" fieldWidth="60%"
+					class="SapUiSmallMarginBottom" id="bname" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Input placeholder="Employee Manager" width="300px"
+					fieldWidth="60%" class="SapUiSmallMarginBottom" id="manager" />
+			</l:HorizontalLayout>
+			<l:HorizontalLayout>
+				<Input placeholder="Employee Team" width="300px" fieldWidth="60%"
+					class="SapUiSmallMarginBottom" id="idTeam3" />
+			</l:HorizontalLayout>
+
+		</l:VerticalLayout>
+
+	</l:HorizontalLayout>
+
+
+
+	<l:HorizontalLayout width="100%" class="adminPage">
+		<Text id="titleTeamList" text="Team List : " class="adminPage" />
+	</l:HorizontalLayout>
+
+	<l:HorizontalLayout>
+
+
+
+
+		<Table xmlns="sap.ui.table" firstVisibleRow="3" visibleRowCount="3"
+			selectionBehavior="RowOnly" visibleRowCountMode="Fixed"
+			rowSelectionChange="handleCellClick" id="table" class="adminPage">
+
+
+			<columns>
+				<Column>
+
+					<c:Label text="Id Team" />
+					<template>
+						<c:TextView id="idTeam" />
+					</template>
+				</Column>
+
+				<Column>
+					<c:Label text="Team Name" />
+					<template>
+						<c:TextView id="nameTeam" />
+
+					</template>
+
+				</Column>
+
+				<Column>
+					<c:Label text="Update Team" />
+					<template>
+						<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+							<items>
+
+								<Button text="Update Team" press="updateTeam" type="Accept" />
+
+							</items>
+						</FlexBox>
+					</template>
+
+				</Column>
+
+				<Column>
+					<c:Label text="Delete Team" />
+					<template>
+						<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+							<items>
+
+								<Button text="Delete Team" press="deleteTeam" type="Reject" />
+
+							</items>
+						</FlexBox>
+					</template>
+
+				</Column>
+
+
+			</columns>
+
+
+		</Table>
+
+
+
+	</l:HorizontalLayout>
+
+
+
+
+	<l:HorizontalLayout class="adminPage">
+		<l:HorizontalLayout width="100%" class="buttonsLayout">
+
+			<Button text="Ask For Request" press="hanldeAskRequest" type="Accept" />
+			<Button text="Consult Requests" press="showRequest" type="Reject" />
+		</l:HorizontalLayout>
+	</l:HorizontalLayout>
+
+
+</ScrollContainer>
+
+
+</mvc:View>

@@ -1,0 +1,691 @@
+<core:View 
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:f= "sap.ui.layout.form"
+xmlns:me="sap.me" 
+xmlns:c="sap.ui.commons" 
+controllerName="applications.SingleEmployeeConsult" 
+xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	 <core:Fragment fragmentName="applications.Header" type="XML" />
+
+
+	 <Page 	class="">
+	 
+		<customHeader >
+			<Toolbar class="customToolBar">
+			
+					<Button width="6em" icon="sap-icon://arrow-left" press="handlePressBack" />
+					
+					<ToolbarSpacer/>
+						<c:TextView  id="month"/>
+					<ToolbarSpacer/>
+					
+	 				<Button width="6em" icon="sap-icon://arrow-right" press="handlePressUp" class="up"/>
+
+			</Toolbar>
+			
+	 		
+		</customHeader>
+		
+		
+		
+		<subHeader class="subheader">
+				<Toolbar >
+					<Button text="Ask For Request" press="hanldeAskRequest" type="Accept"/>
+					<Button text="Delete Request" press="hanldeDeleteRequest" type="Reject"/>
+					<Button text="Consult Requests" press="handleConsultRequest" type="Unstyled" visible="false" id="ConsultRequest"/>
+				
+				<ToolbarSpacer/>
+						<c:DatePicker value="" locale="en-US" yyyymmdd="" change="handleChangePress" id="datePicker" />
+				</Toolbar>
+		</subHeader>
+		
+		
+		
+		<content>
+		
+		
+		 	<Table xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="1"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table"		
+				class="pageCenter"		
+				title = ""
+				>
+
+	
+		<columns> 
+
+			<Column>
+				<c:Label  text="" id="column1Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t1" type="Emphasized" press="askRequest" />
+						            <Button id="b2t1" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column2Id"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t2" type="Emphasized" press="askRequest" />
+						            <Button id="b2t2" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column3Id"/>
+				
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t3" type="Emphasized" press="askRequest" />
+						            <Button id="b2t3" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column4Id" />
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t4" type="Emphasized" press="askRequest" />
+						            <Button id="b2t4" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+  			 </Column>
+   
+   			<Column>
+				<c:Label text="" id="column5Id"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t5" type="Emphasized" press="askRequest" />
+						            <Button id="b2t5" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column6Id"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t6" type="Emphasized" press="askRequest" />
+						            <Button id="b2t6" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+   
+   			<Column>
+				<c:Label text="" id="column7Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" >
+								<items>
+									
+									<Button id="b1t7" type="Emphasized" press="askRequest" />
+						            <Button id="b2t7" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+		
+	
+
+		</columns>
+		
+		
+</Table >
+
+
+	<Table
+	 xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="1"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table2"
+				class="pageCenter">
+	
+	
+	<columns> 
+			
+			
+			<Column>
+				<c:Label  text="" id="column8Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t8" type="Emphasized" press="askRequest" />
+						            <Button id="b2t8" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column9Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t9" type="Emphasized" press="askRequest" />
+						            <Button id="b2t9" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column10Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t10" type="Emphasized" press="askRequest" />
+						            <Button id="b2t10" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column11Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t11" type="Emphasized" press="askRequest" />
+						            <Button id="b2t11" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column12Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t12" type="Emphasized" press="askRequest" />
+						            <Button id="b2t12" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column13Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t13" type="Emphasized" press="askRequest" />
+						            <Button id="b2t13" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column14Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t14" type="Emphasized" press="askRequest" />
+						            <Button id="b2t14" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+	</columns>
+	
+	
+	
+	</Table>
+
+
+
+
+	<Table
+	 xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="1"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table3"
+				class="pageCenter">
+	
+	
+	<columns> 
+			
+			
+			<Column>
+				<c:Label  text="" id="column15Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t15" type="Emphasized" press="askRequest" />
+						            <Button id="b2t15" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column16Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t16" type="Emphasized" press="askRequest" />
+						            <Button id="b2t16" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column17Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t17" type="Emphasized" press="askRequest" />
+						            <Button id="b2t17" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column18Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t18" type="Emphasized" press="askRequest" />
+						            <Button id="b2t18" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column19Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t19" type="Emphasized" press="askRequest" />
+						            <Button id="b2t19" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column20Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t20" type="Emphasized" press="askRequest" />
+						            <Button id="b2t20" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column21Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t21" type="Emphasized" press="askRequest" />
+						            <Button id="b2t21" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+	</columns>
+	
+	
+	
+	</Table>
+		
+		
+	<Table
+	 xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="1"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table4"
+				class="pageCenter">
+	
+	
+	<columns> 
+			
+			
+			<Column>
+				<c:Label  text="" id="column22Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t22" type="Emphasized" press="askRequest" />
+						            <Button id="b2t22" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column23Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t23" type="Emphasized" press="askRequest" />
+						            <Button id="b2t23" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column24Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t24" type="Emphasized" press="askRequest" />
+						            <Button id="b2t24" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column25Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t25" type="Emphasized" press="askRequest" />
+						            <Button id="b2t25" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column26Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t26" type="Emphasized" press="askRequest" />
+						            <Button id="b2t26" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column27Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t27" type="Emphasized" press="askRequest" />
+						            <Button id="b2t27" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column28Id"/>
+				<template>
+					 
+					
+						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+									<Button id="b1t28" type="Emphasized" press="askRequest" />
+						            <Button id="b2t28" type="Emphasized" press="askRequest" />
+						           
+								</items> 
+						</FlexBox>
+
+         
+        
+				</template>	
+				
+			</Column>
+	</columns>
+	
+	
+	
+	</Table>
+	
+		</content> 
+		
+	
+
+		 
+	</Page>
+
+	
+</core:View>

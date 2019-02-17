@@ -1,0 +1,25 @@
+<core:FragmentDefinition
+xmlns:core="sap.ui.core"
+ xmlns:mvc="sap.ui.core.mvc" 
+ xmlns="sap.m"
+	xmlns:f = "sap.ui.layout.form"
+>
+
+
+	<Dialog xmlns="sap.ui.commons" title="Ask Request" type="Message" id="dialog" height="13em">
+		
+		 
+		<content>
+			<Text xmlns="sap.m"  text="Voulez vous vraiment demandez un Congé " />
+		</content>
+		
+		<buttons>
+			<Button xmlns="sap.ui.commons" text="OK" width="" press="handleSubmitPress"/>
+
+		</buttons>
+		 
+</Dialog>
+
+
+
+</core:FragmentDefinition>

@@ -1,0 +1,205 @@
+<mvc:View 
+		xmlns:core="sap.ui.core" 
+		xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="applications.ShowRequest" 
+		xmlns:html="http://www.w3.org/1999/xhtml" 
+		xmlns:l="sap.ui.layout"   
+		xmlns:c="sap.ui.commons" 
+		>
+	
+
+		    <ScrollContainer
+		    height="100%"
+		    width="100%"
+		    horizontal="true"
+		    vertical="true"
+		    focusable="true">
+		    
+		    
+	 	 <core:Fragment fragmentName="applications.Header" type="XML" />
+	
+	
+		  <Panel width="auto" class="sapUiLargeMargi">
+      <content>
+          <Text text="Your can see, and cancel your own holliday request and consult it." class="sapMH4FontSize"/>
+      </content>
+  </Panel>
+  
+  <l:HorizontalLayout>
+	 	
+		
+		
+		
+		 	<Table xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="3"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table"
+				class="pageShowView"
+				>
+
+	
+		<columns> 
+			<Column >
+			
+				<c:Label text="Bname" />
+				<template>
+					<c:TextView  id="bname"/>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label  text="From" />
+				<template>
+        			<c:TextView  id="dateFrom"/>
+        			
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="To"/>
+				<template>
+					        <c:TextView  id="dateTo"/>
+
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="Request Status"/>
+				<template>
+					 		<c:TextView  id="status"/>
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="Reason"/>
+				<template>
+					 		<c:TextView  id="reason"/>
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="Action"/>
+				
+				<template>
+				
+				<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+					<items>
+					 		
+						    <Button id="delete" type="Reject" press="deleteRequest" text="Delete"/>
+						    
+					</items>
+				</FlexBox>
+				</template>	
+				
+			</Column>
+			
+			
+
+			
+		</columns>
+		
+		
+</Table>
+	
+
+		 
+      </l:HorizontalLayout>
+      
+      
+      
+      		  <Panel width="auto" class="sapUiLargeMargi" id="managerPanel">
+      <content>
+          <Text text="If you are a manager, you can valid request." class="sapMH4FontSize"/>
+      </content>
+  </Panel>
+      
+ 
+  <l:HorizontalLayout>
+	 	
+		
+		
+		
+		 	<Table xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="3"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table2"
+				class="pageShowView"
+				>
+
+	
+		<columns> 
+			<Column >
+			
+				<c:Label text="Bname" />
+				<template>
+					<c:TextView  id="bname2"/>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label  text="From" />
+				<template>
+        			<c:TextView  id="dateFrom2"/>
+        			
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="To"/>
+				<template>
+					        <c:TextView  id="dateTo2"/>
+
+				</template>	
+				
+			</Column>
+			
+			
+			<Column>
+				<c:Label text="Observation"/>
+				<template>
+					 		<c:TextField  id="observation"/>
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="Action"/>
+				
+				<template>
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+						<items>
+					 		<Button id="Accept" type="Accept" press="AccepteRequest"  text="Accept"/>
+						    <Button id="refuse" type="Reject" press="refuseRequest" text="refuse"/>
+						 </items>
+					</FlexBox>
+					
+				</template>	
+				
+			</Column>
+			
+			
+
+			
+		</columns>
+		
+		
+</Table>
+	
+
+		 
+      </l:HorizontalLayout>
+      
+		 </ScrollContainer>  
+		 
+</mvc:View>

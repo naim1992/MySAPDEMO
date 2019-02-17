@@ -1,0 +1,238 @@
+.yellow
+{
+	background-color: yellow;
+	   width : 120px;
+     padding-left : 10px;
+}
+
+.green
+{
+	background-color: green;
+	 width : 120px;
+     padding-left : 10px;
+          
+}
+
+
+.flexbox
+{
+	margin-left: 0px;
+}
+.red
+{
+	background-color: red;
+	    width : 120px;
+     padding-left : 10px;
+	    
+}
+
+.blue
+{
+	
+	background-color: blue;
+	    width : 120px;
+     padding-left : 10px;
+}
+
+
+.box
+{
+	margin: auto;
+	margin-top: 30px;
+	width : 400px;
+	border: 1px solid #000000; 
+}
+
+
+.labelAuth
+{
+	font-style: italic;
+	
+}
+
+.lblLogin 
+{
+	
+	margin-top : 10px;
+}
+
+.grid
+{
+	border: 1px solid #000000;
+	
+}
+
+.form
+{
+	border: 1px solid #000000;
+	
+}
+
+.layout
+{
+	
+	border: 1px solid #000000;
+}
+
+.lblPWD 
+{
+	
+	margin-top : 10px;
+}
+
+.up
+	{
+	float : right;
+	}
+	
+	.customToolBar
+	{
+	margin-bottom: 20px;
+	
+	}
+	
+	.subheader
+	{
+	}
+
+
+.bntLogin
+{
+ padding:3px;
+ border:1px solid #000000;
+ margin-top : 10px;
+ border-radius:5px;
+ width:100px;
+ box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+
+
+.grid 
+{
+	
+	background-color: white;
+	border: 0px white solide;
+	
+}
+
+
+.page2
+{
+
+margin:auto;	
+}
+
+.sapUiBody
+{
+background-color: white;		
+}
+
+.pageShowView {
+       	 margin-top:10px;
+         margin-left:250px;
+         margin-right: 250px;
+      }
+      
+      
+ .sapUiLargeMargi {
+         margin-top:35px;
+      	 margin-left:225px;
+      	 margin-right:225px;
+      }
+      
+      /* ShowRequestView , UpdateEmployee, UpdateTeam */
+.HorizontalLayout{
+      					margin-top :20px;
+      					margin-bottom :10px;
+      				  	margin-left:250px;
+      				  	margin-right:250px;
+      				}
+      
+
+	/* AdminView */
+	
+	
+      .buttonsLayout {
+         margin-top:10px;
+         margin-left:220px;
+         margin-right: 220px;
+      }
+         	/* AdminView */
+         
+       .page {
+       	 margin:auto;
+         background-color: white;
+      }
+      
+      	/* AdminView */
+      
+      .horizontalLayout2{
+    	margin-top :20px;
+    	margin-bottom :10px;
+       	margin-left:100px;
+      }
+      
+      	/* AdminView */
+      
+      .separation{
+      	margin-right:20px;
+      }
+      
+      			
+      			
+      /* Calendar View */
+      
+       .hLayout {
+         margin-top:30px;
+         margin-left:320px;
+      }
+     
+      .labelMarginLeft {
+         margin-top:30px;
+         margin-left:10px;
+      }
+      .labelRadio {
+         margin-top:7px;
+      }
+      .rightVLayout {
+         margin-top:30px;
+         margin-left:20px;
+      }
+      .radioButton {
+         margin-top:27px;
+         margin-left:10px;
+      }
+      .button {
+         margin-top:15px;
+         margin-left:10px;
+      }
+      .buttonValid {
+         margin-top:15px;
+         margin-left:10px;
+      }
+       .reason {
+         margin-top:23px;
+         margin-left:10px;
+      }
+     	
+	.admin{
+	    position: RELATIVE;
+    	FLOAT: right;
+   		MARGIN-RIGHT: 270px;
+    	MARGIN-TOP: -54PX;
+	}
+	
+	.adminPage{
+	    margin-top:10px;
+	    margin-left:300px;
+	    margin-right:300px;
+	}
+	
+	.layout2{
+	    margin-left:200px;
+	}
+	.layout3{
+	    margin-left:1px;
+	    margin-right:1px;
+	}

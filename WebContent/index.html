@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<link href="styles/authen.css" type="text/css" rel="stylesheet" />
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+		
+		sap.ui.localResources("applications");
+		
+		var consult = sap.ui.view({id:"ConsultId", viewName:"applications.Consult", type:sap.ui.core.mvc.ViewType.XML});
+		var calendar = sap.ui.view({id:"CalendarId", viewName:"applications.Calendar", type:sap.ui.core.mvc.ViewType.XML});
+		var admin = sap.ui.view({id:"AdminId", viewName:"applications.AdminView", type:sap.ui.core.mvc.ViewType.XML});
+		var update = sap.ui.view({id:"UpdateId", viewName:"applications.UpdateTeam", type:sap.ui.core.mvc.ViewType.XML});
+		var updateEmployee = sap.ui.view({id:"UpdateEmployeeId", viewName:"applications.UpdateEmployee", type:sap.ui.core.mvc.ViewType.XML});
+		var showRequest = sap.ui.view({id:"ShowRequestId", viewName:"applications.ShowRequest", type:sap.ui.core.mvc.ViewType.XML});
+		var app = new sap.m.App({id:"myApp"});
+		
+
+		app.addPage(consult);
+		app.addPage(calendar);
+		app.addPage(admin);
+		app.addPage(update);
+		app.addPage(updateEmployee);
+		app.addPage(showRequest);
+
+		
+		app.placeAt("content");
+		
+			
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

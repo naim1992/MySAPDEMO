@@ -1,0 +1,30 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="applications.Authentification" xmlns:html="http://www.w3.org/1999/xhtml">
+	
+			<Page class="page">
+	
+							<VBox  justifyContent="Center" alignItems="Center" class="box">  
+								<Toolbar xmlns="sap.m" >
+									<content>
+									<Label text="Authentification" class="labelAuth"/>
+									</content>
+								</Toolbar>
+
+								  	
+								
+							
+                                        <Label id="lblLogin" text="Login" design="Bold" labelFor="inpLogin" class="lblLogin" />  
+                                        <Input id="inpLogin" editable="true"  maxLength="20" class="inpLogin" />  
+                                        <Label id="lblPWD" text="Password" design="Bold"  labelFor="inpPWD" class="lblPWD"/>  
+                                        <Input id="inpPWD" type="Password"  maxLength="20" class="inpPWD"/>   
+                                        <Button id="bntLogin" text="Login" tap="actLogin" class="bntLogin" press="handleLoginPress"/>  
+                              </VBox> 
+		
+</Page>
+
+
+
+
+	
+								
+</core:View>

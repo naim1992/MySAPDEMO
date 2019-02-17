@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+xmlns:core="sap.ui.core"
+ xmlns:mvc="sap.ui.core.mvc" 
+ xmlns="sap.m"
+
+>
+
+
+
+
+<ApplicationHeader xmlns="sap.ui.commons"
+				
+				visible="true"
+				logoSrc="source/danone.jpg"
+				
+				displayLogoff="true"
+				userName=""
+				displayWelcome="true"
+				logoff="sap-icon://log"
+				id = "headerId"
+				>
+		</ApplicationHeader>
+		<Button type="Back" press="handlebackPage" />
+	
+
+</core:FragmentDefinition>

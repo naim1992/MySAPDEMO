@@ -1,0 +1,990 @@
+
+		    
+
+<core:View 
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:f= "sap.ui.layout.form"
+xmlns:me="sap.me" 
+xmlns:c="sap.ui.commons" 
+controllerName="applications.Consult" 
+xmlns:html="http://www.w3.org/1999/xhtml">
+
+	
+	 <core:Fragment fragmentName="applications.Header" type="XML" />
+		<Image xmlns="sap.m"
+	id="id"
+	busy="false"
+	busyIndicatorDelay="1000"
+	visible="true"
+	src="source/admin.png"
+	width="50px"
+	height="50px"
+	press="handlePressAdmin"
+	class = "admin">
+	
+	</Image>
+	 <Page 	class="decalage">
+	 
+	 
+		<html:style>
+		     	.validateRequest{
+		     		min-width:100%;
+		     	    display : inline-block;
+    		 		background-color: green;    		 	  
+    		 		color:yellow;
+    		 		white-space:nowrap;
+     		  	}
+
+      			.validateRequestAtHome{
+    				background-color:blue;
+    				margin-top:1px;
+    		 		margin-bottom:1px;
+     			}
+			    .waitingRequest{
+			    	background-color:yellow;
+			    	margin-top:1px;
+    		 		margin-bottom:1px;
+			    }
+			    .weekend{
+			    	background-color:grey;
+			    	min-width:100%;
+		     	    display : inline-block;
+    		 	    color:yellow;
+			    }
+			    .canceledRequest{
+			  	  	background-color:red;
+			     	margin-top:1px;
+    		 		margin-bottom:1px;
+			    }
+			    .nothing{
+			  	  	 background-color:green;
+			  	  	 margin-top:1px;
+    		 		margin-bottom:1px;
+			    }
+			    
+			    .day1{
+			    	margin-left:100px;
+			    	margin-right:12px;
+			    }
+			    .days{
+			    	margin-left:12px;
+			    	margin-right:13px;
+			    }
+			     .days2{
+			    	margin-left:12px;
+			    	margin-right:12px;
+			    }
+		</html:style>
+		
+			
+		<subHeader >
+			<Toolbar class="customToolBar">
+			
+					<Button width="6em" icon="sap-icon://arrow-left" press="handlePressBack" />
+					
+					<ToolbarSpacer/>
+						<c:TextView  id="month"/>
+					<ToolbarSpacer/>
+					
+	 				<Button width="6em" icon="sap-icon://arrow-right" press="handlePressUp" class="up"/>
+
+			</Toolbar>
+			
+	 		
+		</subHeader>
+		
+		
+		<customHeader class="subheader">
+				<Toolbar >
+					<Button text="Ask For Request" press="hanldeAskRequest" type="Accept"/>
+					<Button text="Consult Requests" press="handleConsultRequest" type="Unstyled" id="ConsultRequest"/>
+				
+				<ToolbarSpacer/>
+						<c:DatePicker value="" locale="en-US" yyyymmdd="" change="handleChangePress" id="datePicker" />
+				</Toolbar>
+		</customHeader>
+		
+	
+		
+		<content>
+		
+		<Label id="today1" visible="false" /> 
+		<Label id="today2" visible="false" /> 
+		<Label id="today3" visible="false" /> 
+		<Label id="today4" visible="false" /> 
+		<Label id="today5" visible="false" /> 
+		<Label id="today6" visible="false" /> 
+		<Label id="today7" visible="false" /> 
+		<Label id="today8" visible="false" /> 
+		<Label id="today9" visible="false" /> 
+		<Label id="today10" visible="false" /> 
+		<Label id="today11" visible="false" /> 
+		<Label id="today12" visible="false" /> 
+		<Label id="today13" visible="false" /> 
+		<Label id="today14" visible="false" /> 
+		<Label id="today15" visible="false" /> 
+		<Label id="today16" visible="false" /> 
+		<Label id="today17" visible="false" /> 
+		<Label id="today18" visible="false" /> 
+		<Label id="today19" visible="false" /> 
+		<Label id="today20" visible="false" /> 
+		<Label id="today21" visible="false" /> 
+		<Label id="today22" visible="false" /> 
+		<Label id="today23" visible="false" /> 
+		<Label id="today24" visible="false" /> 
+		<Label id="today25" visible="false" /> 
+		<Label id="today26" visible="false" /> 
+		<Label id="today27" visible="false" /> 
+		<Label id="today28" visible="false" /> 
+		<Label id="today29" visible="false" /> 
+		<Label id="today30" visible="false" /> 
+		<Label id="today31" visible="false" /> 
+		
+				<c:Label text="Mo" id="day1" class="day1"/>	
+				<c:Label text="Mo" id="day2" class="days"/>
+				<c:Label text="Mo" id="day3" class="days"/>
+				<c:Label text="Mo" id="day4" class="days"/>			
+				<c:Label text="Mo" id="day5" class="days"/>
+				<c:Label text="Mo" id="day6" class="days"/>
+				<c:Label text="Mo" id="day7" class="days"/>
+				<c:Label text="Mo" id="day8" class="days"/>
+				<c:Label text="Mo" id="day9" class="days"/>		
+				<c:Label text="Mo" id="day10" class="days"/>
+				<c:Label text="Mo" id="day11" class="days"/>
+				<c:Label text="Mo" id="day12" class="days"/>
+				<c:Label text="Mo" id="day13" class="days"/>
+				<c:Label text="Mo" id="day14" class="days"/>
+				<c:Label text="Mo" id="day15" class="days"/>
+				<c:Label text="Mo" id="day16" class="days"/>
+				<c:Label text="Mo" id="day17" class="days"/>
+				<c:Label text="Mo" id="day18" class="days"/>
+				<c:Label text="Mo" id="day19" class="days"/>
+				<c:Label text="Mo" id="day20" class="days2"/>
+				<c:Label text="Mo" id="day21" class="days2"/>
+				<c:Label text="Mo" id="day22" class="days2"/>
+				<c:Label text="Mo" id="day23" class="days2"/>
+				<c:Label text="Mo" id="day24" class="days2"/>		
+				<c:Label text="Mo" id="day25" class="days2"/>
+				<c:Label text="Mo" id="day26" class="days2"/>
+				<c:Label text="Mo" id="day27" class="days2"/>
+				<c:Label text="Mo" id="day28" class="days2"/>
+				<c:Label text="Mo" id="day29" class="days2"/>
+				<c:Label text="Mo" id="day30" class="days2"/>
+				<c:Label text="Mo" id="day31" class="days2"/>
+				
+		 	<Table xmlns="sap.ui.table"
+				firstVisibleRow="3"
+				visibleRowCount="6"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table"				
+				>
+
+	
+		<columns> 
+			<Column width="8em">
+			
+				<c:Label text="Employee" />
+				<template>
+					<c:TextView  id="employee"/>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label  text="" id="column1Id"/>
+				
+				<template>
+					 						
+						 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+								
+								<l:VerticalLayout >
+								
+  								<l:HorizontalLayout id="b1t211"  >
+						            <Label id="b1t1"  />
+						              </l:HorizontalLayout>
+						            
+							<l:HorizontalLayout id="b2t221" >
+						            <Label id="b2t1"  />
+						              </l:HorizontalLayout>	
+						              
+						              </l:VerticalLayout>						           
+								</items> 
+						</FlexBox>
+
+                 
+				</template>	
+			</Column>
+			
+		
+			
+			<Column>
+				<c:Label text="" id="column2Id" />
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+								  								<l:HorizontalLayout id="b1t212" >
+								
+						            <Label id="b1t2"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t222"  >
+						            
+						            <Label id="b2t2"   />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column3Id"/>
+				
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+								  								<l:HorizontalLayout id="b1t213" >
+								
+						            <Label id="b1t3"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t223" >
+						            
+						            <Label id="b2t3"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column4Id" />
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+								  								<l:HorizontalLayout id="b1t214" >
+								
+						            <Label id="b1t4"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t224" >
+						            
+						            <Label id="b2t4"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+  			 </Column>
+   
+   			<Column>
+				<c:Label text="" id="column5Id"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+								  								<l:HorizontalLayout id="b1t215" >
+								
+						            <Label id="b1t5"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t225" >
+						            
+						            <Label id="b2t5"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column6Id"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+								  								<l:HorizontalLayout id="b1t216" >
+								
+						            <Label id="b1t6"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t226" >
+						            
+						            <Label id="b2t6"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+   
+   			<Column>
+				<c:Label text="" id="column7Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t217" >
+									
+						            <Label id="b1t7"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t227" >
+						            
+						            <Label id="b2t7"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+
+				
+				<Column>
+				<c:Label text="" id="column8Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t218" >
+									
+						            <Label id="b1t8"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t228" >
+						            
+						            <Label id="b2t8"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+	<Column>
+				<c:Label text="" id="column9Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox" >
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t219" >
+									
+						            <Label id="b1t9"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t229" >
+						            
+						            <Label id="b2t9"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column10Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2110" >
+									
+						            <Label id="b1t10"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2210" >
+						            
+						            <Label id="b2t10"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column11Id"/>
+								<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2111" >
+									
+						            <Label id="b1t11"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2211" >
+						            
+						            <Label id="b2t11"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+	
+	
+		
+			
+			<Column>
+				<c:Label text="" id="column12Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox" >
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2112" >
+									
+						            <Label id="b1t12"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2212" >
+						            
+						            <Label id="b2t12"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			
+			<Column>
+				<c:Label text="" id="column13Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox" >
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2113" >
+									
+						            <Label id="b1t13"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2213" >
+						            
+						            <Label id="b2t13"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column14Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2114" >
+									
+						            <Label id="b1t14"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2214" >
+						            
+						            <Label id="b2t14"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column15Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2115" >
+									
+						            <Label id="b1t15"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2215" >
+						            
+						            <Label id="b2t15"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+
+				<Column>
+				<c:Label text="" id="column16Id"/>
+								<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2116" >
+									
+						            <Label id="b1t16"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2216" >
+						            
+						            <Label id="b2t16"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+	
+	
+		
+			
+			<Column>
+				<c:Label text="" id="column17Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2117" >
+									
+						            <Label id="b1t17"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2217" >
+						            
+						            <Label id="b2t17"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			
+			<Column>
+				<c:Label text="" id="column18Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2118" >
+									
+						            <Label id="b1t18"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2218" >
+						            
+						            <Label id="b2t18"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column19Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2119" >
+									
+						            <Label id="b1t19"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2219" >
+						            
+						            <Label id="b2t19"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column20Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2120" >
+									
+						            <Label id="b1t20"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2220" >
+						            
+						            <Label id="b2t20"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>		
+			
+			<Column>
+				<c:Label text="" id="column21Id"/>
+								<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox" >
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2121" >
+									
+						            <Label id="b1t21"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2221" >
+						            
+						            <Label id="b2t21"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+	
+	
+		
+<Column>
+				<c:Label text="" id="column22Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2122" >
+									
+						            <Label id="b1t22"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2222" >
+						            
+						            <Label id="b2t22"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			
+			<Column>
+				<c:Label text="" id="column23Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2123" >
+									
+						            <Label id="b1t23"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2223" >
+						            
+						            <Label id="b2t23"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column24Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2124" >
+									
+						            <Label id="b1t24"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2224" >
+						            
+						            <Label id="b2t24"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+
+			<Column>
+				<c:Label text="" id="column25Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2125" >
+									
+						            <Label id="b1t25"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2225" >
+						            
+						            <Label id="b2t25"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+
+				<Column>
+				<c:Label text="" id="column26Id"/>
+								<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2126" >
+									
+						            <Label id="b1t26"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2226" >
+						            
+						            <Label id="b2t26"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+	
+	
+				
+			
+			<Column>
+				<c:Label text="" id="column27Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" >
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2127" >
+									
+						            <Label id="b1t27"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2227" >
+						            
+						            <Label id="b2t27"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			
+			<Column>
+				<c:Label text="" id="column28Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2128" >
+									
+						            <Label id="b1t28"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2228" >
+						            
+						            <Label id="b2t28"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label text="" id="column29Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2129" >
+									
+						            <Label id="b1t29"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2229" >
+						            
+						            <Label id="b2t29"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+			
+					<Column>
+				<c:Label text="" id="column30Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2130" >
+									
+						            <Label id="b1t30"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2230" >
+						            
+						            <Label id="b2t30"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+					
+				</template>	
+			</Column>
+			
+				<Column>
+				<c:Label text="" id="column31Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2131" >
+									
+						            <Label id="b1t31"  />
+						            						              </l:HorizontalLayout>
+						            							<l:HorizontalLayout id="b2t2231" >
+						            
+						            <Label id="b2t31"  />
+						           						              </l:HorizontalLayout>						           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+					
+				</template>	
+			</Column>
+					<Column>
+				<c:Label text="" id="column32Id"/>
+				<template >
+					<FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start" class = "flexbox">
+								<items>
+																<l:VerticalLayout >
+								
+									  								<l:HorizontalLayout id="b1t2132" >
+									
+						            <Label id="b1t32" text="19" />
+						            						              </l:HorizontalLayout>
+						            													           
+						           						              </l:VerticalLayout>						           
+						           
+								</items> 
+						</FlexBox>
+				</template>	
+			</Column>
+					
+			
+			
+
+		</columns>
+		
+		
+</Table>
+
+
+
+		
+		</content> 
+		
+	
+	
+
+		 
+	</Page>
+
+	 
+	
+	 
+	
+	 
+	 
+	 
+	 
+		
+
+	 
+
+	 
+	
+	
+	
+<!-- 
+
+<RadioButtonGroup xmlns="sap.ui.commons"  select="" id="btnRadio">
+		
+		<items> 
+			<Item xmlns="sap.ui.core"
+				text="Option1"
+				enabled="true"
+				textDirection="Inherit"
+				key="key1">
+					
+			</Item>
+			
+			
+			<Item xmlns="sap.ui.core"
+				text="Option2"
+				enabled="true"
+				textDirection="Inherit"
+				key="key2">
+					
+			</Item>
+			
+		</items>
+</RadioButtonGroup>
+
+<Button text="valider" press="handleSelecteItem" />
+
+ -->
+
+
+
+
+</core:View>

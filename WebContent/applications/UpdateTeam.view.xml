@@ -1,0 +1,110 @@
+<mvc:View 	xmlns:core="sap.ui.core" 
+			xmlns:mvc="sap.ui.core.mvc" 
+			xmlns="sap.m"
+			controllerName="applications.UpdateTeam" 
+			xmlns:html="http://www.w3.org/1999/xhtml" 
+			xmlns:l="sap.ui.layout"   
+			xmlns:c="sap.ui.commons" 
+		>
+		
+		    <ScrollContainer
+		    height="100%"
+		    width="100%"
+		    horizontal="true"
+		    vertical="true"
+		    focusable="true">
+   
+	 	 <core:Fragment fragmentName="applications.Header" type="XML" />
+	
+		  <l:VerticalLayout class="SapUiContentPadding" width="100%">
+     
+     	<l:content>
+		 	<l:HorizontalLayout class="adminPage" width="100%">
+				<Text id="updateTeam" text="Update Team : " class="HorizontalLayout"/>
+		   	 </l:HorizontalLayout>
+			 <l:HorizontalLayout class="adminPage" width="100%">
+				<Input placeholder="Id Team"  width="300px" fieldWidth="60%" class="SapUiSmallMarginBottom" id="id_team"/>
+				<Input placeholder="Name Team"  width="300px" fieldWidth="60%" class="SapUiSmallMarginBottom" id="name_team"/>
+				<Button text="Submit" press="updateTeam" type="Accept"/>
+		   	 </l:HorizontalLayout>
+		   	 <l:HorizontalLayout class="adminPage" width="100%">
+				 <Text id="employeeTeamList" text="Employee Team List : " class="HorizontalLayout"/>
+		   	 </l:HorizontalLayout>
+		</l:content>
+     
+      </l:VerticalLayout>
+      
+      
+		
+		
+		 	<Table xmlns="sap.ui.table"
+				firstVisibleRow="5"
+				visibleRowCount="5"
+				selectionBehavior = "RowOnly"
+				visibleRowCountMode="Fixed"
+				rowSelectionChange="handleCellClick" 
+				id="table"
+				class="adminPage"
+				>
+
+	
+		<columns> 
+			<Column >
+			
+				<c:Label text="Bname employee" />
+				<template>
+					<c:TextView  id="bname"/>
+				</template>	
+			</Column>
+			
+			<Column>
+				<c:Label  text="Manager employee" />
+				<template>
+        			<c:TextView  id="manager"/>
+        			
+				</template>	
+				
+			</Column>
+			
+				<Column>
+				<c:Label  text="Id Team" />
+				<template>
+        			<c:TextView  id="idTeam2"/>
+        			
+				</template>	
+				
+			</Column>
+			
+			<Column>
+				<c:Label text="Update Employee"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								<Button text="Update Employee" press="updateEmployee" type="Accept"/>					           
+								</items> 
+						</FlexBox>
+				</template>	
+				
+			</Column>
+			
+						<Column>
+				<c:Label text="Delete Team"/>
+				<template>
+					 <FlexBox xmlns="sap.m" justifyContent="Center" alignItems="Start">
+								<items>
+								
+								<Button text="Delete Employee" press="deleteEmployees" type="Reject"/>
+					
+								</items> 
+						</FlexBox>
+				</template>	
+				
+			</Column>
+
+			
+		</columns>
+		
+		
+</Table>
+		</ScrollContainer>
+</mvc:View>
